@@ -29,22 +29,22 @@ def say_money(value):
 
 
 # check balance
-def check_bal():
-    os.system('sh accounts.sh > output.json')
+def check_bal(idn):
+    os.system('sh accounts+'idn'+.sh > output.json')
     data = json.load(open('output.json'))
     return ('your current available balance is: ' + say_money(data['account_balances'][0]['available']))
 
 # most recent transaction
-def most_recent_transaction():
-    os.system('sh transactions.sh > output.json')
+def most_recent_transaction(idn):
+    os.system('sh transactions+'idn'+.sh > output.json')
     data = json.load(open('output.json'))
     val = data['transactions'][0]['amount']
     
     return ('Your most recent transaction was: ' + say_money(val))
 
 # how much did i spend total
-def total_yr_spend_value():
-    os.system('sh transactions.sh > output.json')
+def total_yr_spend_value(idn):
+    os.system('sh transactions+'idn'+.sh > output.json')
     data = json.load(open('output.json'))
     arr = data['transactions']
     total = 0
@@ -53,8 +53,8 @@ def total_yr_spend_value():
     print('Your total spending over the last year was: ' + say_money(total))
     return total
 
-def total_yr_spend():
-    os.system('sh transactions.sh > output.json')
+def total_yr_spend(idn):
+    os.system('sh transactions'+idn+'.sh > output.json')
     data = json.load(open('output.json'))
     arr = data['transactions']
     total = 0
@@ -64,8 +64,8 @@ def total_yr_spend():
 
 
 # how much did i spend last week
-def week_spend():
-    os.system('sh transactions.sh > output.json')
+def week_spend(idn):
+    os.system('sh transactions+'idn'+.sh > output.json')
     data = json.load(open('output.json'))
     total = 0
     today = DT.date.today()
@@ -85,7 +85,7 @@ def week_spend():
     past_two = total
     past_year = total_yr_spend_value()
 
-    ret_str = ret_str + ('The percentage of total transactions is ' + str(round(past_two*100/past_year, 2)) + ' percent')
+    ret_str = ret_str + ('The percentage from the past two weeks is ' + str(round(past_two*100/past_year, 2)) + ' percent of your spending over the past year')
 
     return ret_str
 
@@ -96,26 +96,83 @@ def launch():
     speech_text = 'suh dude'
     return question(speech_text).reprompt(speech_text).simple_card('HelloWorld', speech_text)
 
-
+# ELLEN's
+#
+#
 @ask.intent('BiWeeklyPercentage')
 def BiWeekPercent():
-    speech_text = week_spend()
+    speech_text = week_spend(1) + 'That is pretty good, keep it up'
     return statement(speech_text).simple_card('BiWeeklyPercentage', speech_text)
 
 @ask.intent('YearTotal')
 def year_total():
-    speech_text = total_yr_spend()
+    speech_text = total_yr_spend(1) + 'That is a lot of money.'
     return statement(speech_text).simple_card('YearTotal', speech_text)
 
 @ask.intent('CheckBalance')
 def chk_bal():
-    speech_text = check_bal()
+    speech_text = check_bal(1) + ' You are doing pretty well for yourself'
     return statement(speech_text).simple_card('CheckBalance', speech_text)
 
 @ask.intent('MostRecent')
 def most_recent():
-    speech_text = most_recent_transaction()
+    speech_text = most_recent_transaction(1) 
     return statement(speech_text).simple_card('MostRecent', speech_text)
+
+# JACOB's
+#
+#
+@ask.intent('BiWeeklyPercentage2')
+def BiWeekPercent2():
+    speech_text = week_spend(2)
+    return statement(speech_text).simple_card('BiWeeklyPercentage', speech_text)
+
+@ask.intent('YearTotal2')
+def year_total2():
+    speech_text = total_yr_spend(2)
+    return statement(speech_text).simple_card('YearTotal', speech_text)
+
+@ask.intent('CheckBalance2')
+def chk_bal2():
+    speech_text = check_bal(2)
+    return statement(speech_text).simple_card('CheckBalance', speech_text)
+
+@ask.intent('MostRecent2')
+def most_recent2():
+    speech_text = most_recent_transaction(2)
+    return statement(speech_text).simple_card('MostRecent', speech_text)
+
+
+# MIKE
+#
+#
+@ask.intent('BiWeeklyPercentage3')
+def BiWeekPercent3():
+    speech_text = 'The percentage over the past two weeks that you have' 
+                  'spent is 50% of your spending over the past year'
+                  'Boy you need to save more and stop being so yolo swag. Dabs'
+    return statement(speech_text).simple_card('BiWeeklyPercentage', speech_text)
+
+@ask.intent('YearTotal3')
+def year_total3():
+    speech_text = 'You did alright this year but you could use a while lot of improvement. Your killing me Mike'
+    return statement(speech_text).simple_card('YearTotal', speech_text)
+
+@ask.intent('CheckBalance3')
+def chk_bal():
+    speech_text = 'I am not sure if you want to know your balance, but you have 5 dollars and 37 cents
+                   in your account,'
+    return statement(speech_text).simple_card('CheckBalance', speech_text)
+
+@ask.intent('MostRecent3')
+def most_recent():
+    speech_text = 'You spent 50 dollars on garlic bread maybe you need to rethink your life choices'
+    return statement(speech_text).simple_card('MostRecent', speech_text)
+
+
+
+
+############################
 
 @ask.intent('Unhandled')
 def unhandled():

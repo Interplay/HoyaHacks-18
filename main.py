@@ -32,7 +32,7 @@ def say_money(value):
 def check_bal():
     os.system('sh accounts.sh > output.json')
     data = json.load(open('output.json'))
-    print('your current available balance is: ' + str(data['account_balances'][0]['available']))
+    return ('your current available balance is: ' + str(data['account_balances'][0]['available']))
 
 # most recent transaction
 def most_recent_transaction():
@@ -40,10 +40,10 @@ def most_recent_transaction():
     data = json.load(open('output.json'))
     val = data['transactions'][0]['amount']
     
-    print('Your most recent transaction was: ' + say_money(val))
+    return ('Your most recent transaction was: ' + say_money(val))
 
 # how much did i spend total
-def total_yr_spend():
+def total_yr_spend_value():
     os.system('sh transactions.sh > output.json')
     data = json.load(open('output.json'))
     arr = data['transactions']
@@ -52,6 +52,15 @@ def total_yr_spend():
         total = total + x['amount']
     print('Your total spending over the last year was: ' + say_money(total))
     return total
+
+def total_yr_spend():
+    os.system('sh transactions.sh > output.json')
+    data = json.load(open('output.json'))
+    arr = data['transactions']
+    total = 0
+    for x in arr:
+        total = total + x['amount']
+    return ('Your total spending over the last year was: ' + say_money(total))
 
 
 # how much did i spend last week
@@ -74,7 +83,7 @@ def week_spend():
     ret_str = ret_str + ('Your total spending over the past two weeks was: ' + say_money(total) + '. ')
 
     past_two = total
-    past_year = total_yr_spend()
+    past_year = total_yr_spend_value()
 
     ret_str = ret_str + ('The percentage of total transactions is ' + str(round(past_two*100/past_year, 2)) + ' percent')
 

@@ -32,7 +32,7 @@ def say_money(value):
 def check_bal():
     os.system('sh accounts.sh > output.json')
     data = json.load(open('output.json'))
-    return ('your current available balance is: ' + str(data['account_balances'][0]['available']))
+    return ('your current available balance is: ' + say_money(data['account_balances'][0]['available']))
 
 # most recent transaction
 def most_recent_transaction():

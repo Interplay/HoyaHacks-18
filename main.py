@@ -119,7 +119,7 @@ def most_recent():
 
 @ask.intent('Unhandled')
 def unhandled():
-    unhandled_response="Sorry, I did not understand that command. Say help for assitance."
+    unhandled_response="Sorry, I did not understand that command. Say help for assitance"
     return question().reprompt(unhandled_response).simple_card('Unhandled', unhandled_response)
 
 @ask.intent('AMAZON.HelpIntent')

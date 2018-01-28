@@ -1,0 +1,92 @@
+{
+  "intents": [
+    {
+      "intent": "MostRecent"
+    },
+    {
+      "intent": "MostRecenttwo"
+    },
+    {
+      "intent": "MostRecentthree"
+    },
+    {
+      "intent": "BiWeeklyTotal"
+    },
+    {
+      "intent": "YearTotal"
+    },
+    {
+      "intent": "YearTotaltwo"
+    },
+    {
+      "intent": "YearTotalthree"
+    },
+    {
+      "intent": "WeeklyPercentage"
+    },
+    {
+      "intent": "BiWeeklyPercentage"
+    },
+    {
+      "intent": "BiWeeklyPercentagetwo"
+    },
+    {
+      "intent": "BiWeeklyPercentagethree"
+    },
+    {
+      "intent": "HelpFunc"
+    },
+    {
+      "intent":"CheckBalance"  
+    },
+    {
+      "intent":"CheckBalancetwo"  
+    },
+    {
+      "intent":"CheckBalancethree"  
+    },
+    {
+      "intent": "AMAZON.StopIntent"
+    },
+    {
+      "intent": "AMAZON.CancelIntent"
+    }
+  ]
+}
+
+MostRecent Ellen's most recent transaction
+MostRecent Ellen's recent transaction
+MostRecent Ellen's latest transaction
+MostRecent Ellen's most recent
+MostRecent Ellen most recent transaction
+MostRecent Ellen recent transaction
+MostRecent Ellen latest transaction
+MostRecent Ellen most recent
+MostRecenttwo Jacob's most recent
+MostRecenttwo Jacob most recent
+MostRecenttwo Jacob's most recent transaction
+MostRecenttwo Jacob most recent transaction
+MostRecenttwo Jacob's recent transaction
+MostRecenttwo Jacob recent transaction
+MostRecenttwo Jacob's latest transaction
+MostRecenttwo Jacob latest transaction
+MostRecentthree My most recent transaction
+MostRecentthree My recent transaction
+BiWeeklyPercentagethree My spending over the past two weeks
+BiWeeklyPercentage Ellen's spending over the past two weeks
+BiWeeklyPercentage Ellen spending over the past two weeks
+BiWeeklyPercentagetwo Jacob's spending over the past two weeks
+BiWeeklyPercentagetwo Jacob spending over the past two weeks
+YearTotal Ellen's total transactions for the year
+YearTotal Ellen total transactions for the year
+YearTotaltwo Jacob's total for the year
+YearTotaltwo Jacob total for the year
+YearTotalthree My total transactions for the year
+CheckBalance Ellen's current balance
+CheckBalance Ellen current balance
+CheckBalancetwo Jacob's current balance
+CheckBalancetwo Jacob current balance
+CheckBalancethree My current balance
+HelpFunc commands
+HelpFunc help
+HelpFunc about

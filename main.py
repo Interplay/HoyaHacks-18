@@ -30,12 +30,14 @@ def say_money(value):
 
 # check balance
 def check_bal(idn):
+    idn = str(idn)
     os.system('sh accounts'+idn+'.sh > output.json')
     data = json.load(open('output.json'))
     return ('your current available balance is: ' + say_money(data['account_balances'][0]['available']))
 
 # most recent transaction
 def most_recent_transaction(idn):
+    idn = str(idn)
     os.system('sh transactions'+idn+'.sh > output.json')
     data = json.load(open('output.json'))
     val = data['transactions'][0]['amount']
@@ -44,6 +46,7 @@ def most_recent_transaction(idn):
 
 # how much did i spend total
 def total_yr_spend_value(idn):
+    idn = str(idn)
     os.system('sh transactions'+idn+'.sh > output.json')
     data = json.load(open('output.json'))
     arr = data['transactions']
@@ -54,6 +57,7 @@ def total_yr_spend_value(idn):
     return total
 
 def total_yr_spend(idn):
+    idn = str(idn)
     os.system('sh transactions'+idn+'.sh > output.json')
     data = json.load(open('output.json'))
     arr = data['transactions']
@@ -65,6 +69,7 @@ def total_yr_spend(idn):
 
 # how much did i spend last week
 def week_spend(idn):
+    idn = str(idn)
     os.system('sh transactions'+idn+'.sh > output.json')
     data = json.load(open('output.json'))
     total = 0

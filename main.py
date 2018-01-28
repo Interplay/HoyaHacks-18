@@ -160,8 +160,7 @@ def year_total3():
 
 @ask.intent('CheckBalance3')
 def chk_bal():
-    speech_text = 'I am not sure if you want to know your balance, but you have 5 dollars and 37 cents
-                   in your account,'
+    speech_text = 'I am not sure if you want to know your balance, but you have 5 dollars and 37 cents in your account,'
     return statement(speech_text).simple_card('CheckBalance', speech_text)
 
 @ask.intent('MostRecent3')
@@ -182,7 +181,7 @@ def unhandled():
 @ask.intent('HelpFunc')
 def help_func():
     helplist="You are able to ask for most recent transaction, check your balance, spending stats for two weeks, and weekly total spending"
-    return statement(helplist).simple_card('HelpFunc', helplist)
+    return question(helplist).simple_card('HelpFunc', helplist)
 
 @ask.intent('AMAZON.HelpIntent')
 def help():

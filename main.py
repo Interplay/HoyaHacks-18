@@ -122,22 +122,22 @@ def most_recent():
 # JACOB's
 #
 #
-@ask.intent('BiWeeklyPercentage2')
+@ask.intent('BiWeeklyPercentagetwo')
 def BiWeekPercent2():
     speech_text = week_spend(2)
     return statement(speech_text).simple_card('BiWeeklyPercentage', speech_text)
 
-@ask.intent('YearTotal2')
+@ask.intent('YearTotaltwo')
 def year_total2():
     speech_text = total_yr_spend(2)
     return statement(speech_text).simple_card('YearTotal', speech_text)
 
-@ask.intent('CheckBalance2')
+@ask.intent('CheckBalancetwo')
 def chk_bal2():
     speech_text = check_bal(2)
     return statement(speech_text).simple_card('CheckBalance', speech_text)
 
-@ask.intent('MostRecent2')
+@ask.intent('MostRecenttwo')
 def most_recent2():
     speech_text = most_recent_transaction(2)
     return statement(speech_text).simple_card('MostRecent', speech_text)
@@ -146,22 +146,22 @@ def most_recent2():
 # MIKE
 #
 #
-@ask.intent('BiWeeklyPercentage3')
+@ask.intent('BiWeeklyPercentagethree')
 def BiWeekPercent3():
     speech_text = 'The percentage over the past two weeks that you have' +'spent is 50 percent of your spending over the past year. ' + 'Boy you need to save more and stop being so yolo swag. Dabs'
     return statement(speech_text).simple_card('BiWeeklyPercentage', speech_text)
 
-@ask.intent('YearTotal3')
+@ask.intent('YearTotalthree')
 def year_total3():
     speech_text = 'You did alright this year but you could use a while lot of improvement. Your killing me Mike'
     return statement(speech_text).simple_card('YearTotal', speech_text)
 
-@ask.intent('CheckBalance3')
+@ask.intent('CheckBalancethree')
 def chk_bal():
     speech_text = 'I am not sure if you want to know your balance, but you have 5 dollars and 37 cents in your account,'
     return statement(speech_text).simple_card('CheckBalance', speech_text)
 
-@ask.intent('MostRecent3')
+@ask.intent('MostRecentthree')
 def most_recent():
     speech_text = 'You spent 50 dollars on garlic bread maybe you need to rethink your life choices'
     return statement(speech_text).simple_card('MostRecent', speech_text)

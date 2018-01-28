@@ -120,12 +120,17 @@ def most_recent():
 @ask.intent('Unhandled')
 def unhandled():
     unhandled_response="Sorry, I did not understand that command. Say help for assitance"
-    return question().reprompt(unhandled_response).simple_card('Unhandled', unhandled_response)
+    return question().reprompt(unhandled_response)
+
+@ask.intent('HelpFunc')
+def help_func():
+    helplist="You are able to ask for most recent transaction, check your balance, spending stats for two weeks, and weekly total spending"
+    return statement(helplist).simple_card('HelpFunc', helplist)
 
 @ask.intent('AMAZON.HelpIntent')
 def help():
     unhandled_response="Sorry, I did not understand that command. Say help for assitance."
-    return question().reprompt(unhandled_response).simple_card('Unhandled', unhandled_response)
+    return question().reprompt(unhandled_response)
 
 
 @ask.session_ended

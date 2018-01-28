@@ -93,7 +93,7 @@ def week_spend(idn):
 
 @ask.launch
 def launch():
-    speech_text = 'suh dude'
+    speech_text = 'Welcome to EchoDog, your loyal fincancial companion.'
     return question(speech_text).reprompt(speech_text).simple_card('HelloWorld', speech_text)
 
 # ELLEN's
@@ -149,7 +149,7 @@ def most_recent2():
 @ask.intent('BiWeeklyPercentage3')
 def BiWeekPercent3():
     speech_text = 'The percentage over the past two weeks that you have' 
-                  'spent is 50% of your spending over the past year'
+                  'spent is 50 percent of your spending over the past year'
                   'Boy you need to save more and stop being so yolo swag. Dabs'
     return statement(speech_text).simple_card('BiWeeklyPercentage', speech_text)
 

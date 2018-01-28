@@ -88,10 +88,25 @@ def launch():
     return question(speech_text).reprompt(speech_text).simple_card('HelloWorld', speech_text)
 
 
-@ask.intent('HelloWorldIntent')
-def hello_world():
+@ask.intent('BiWeeklyPercentage')
+def BiWeekPercent():
     speech_text = week_spend()
-    return statement(speech_text).simple_card('HelloWorld', speech_text)
+    return statement(speech_text).simple_card('BiWeeklyPercentage', speech_text)
+
+@ask.intent('YearTotal')
+def year_total():
+    speech_text = total_yr_spend()
+    return statement(speech_text).simple_card('YearTotal', speech_text)
+
+@ask.intent('CheckBalance')
+def chk_bal():
+    speech_text = check_bal()
+    return statement(speech_text).simple_card('CheckBalance', speech_text)
+
+@ask.intent('MostRecent')
+def most_recent():
+    speech_text = most_recent_transaction()
+    return statement(speech_text).simple_card('MostRecent', speech_text)
 
 
 @ask.intent('AMAZON.HelpIntent')

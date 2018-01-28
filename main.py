@@ -30,13 +30,13 @@ def say_money(value):
 
 # check balance
 def check_bal(idn):
-    os.system('sh accounts+'idn'+.sh > output.json')
+    os.system('sh accounts'+idn+'.sh > output.json')
     data = json.load(open('output.json'))
     return ('your current available balance is: ' + say_money(data['account_balances'][0]['available']))
 
 # most recent transaction
 def most_recent_transaction(idn):
-    os.system('sh transactions+'idn'+.sh > output.json')
+    os.system('sh transactions'+idn+'.sh > output.json')
     data = json.load(open('output.json'))
     val = data['transactions'][0]['amount']
     
@@ -44,7 +44,7 @@ def most_recent_transaction(idn):
 
 # how much did i spend total
 def total_yr_spend_value(idn):
-    os.system('sh transactions+'idn'+.sh > output.json')
+    os.system('sh transactions'+idn+'.sh > output.json')
     data = json.load(open('output.json'))
     arr = data['transactions']
     total = 0
@@ -65,7 +65,7 @@ def total_yr_spend(idn):
 
 # how much did i spend last week
 def week_spend(idn):
-    os.system('sh transactions+'idn'+.sh > output.json')
+    os.system('sh transactions'+idn+'.sh > output.json')
     data = json.load(open('output.json'))
     total = 0
     today = DT.date.today()
@@ -148,9 +148,7 @@ def most_recent2():
 #
 @ask.intent('BiWeeklyPercentage3')
 def BiWeekPercent3():
-    speech_text = 'The percentage over the past two weeks that you have' 
-                  'spent is 50 percent of your spending over the past year'
-                  'Boy you need to save more and stop being so yolo swag. Dabs'
+    speech_text = 'The percentage over the past two weeks that you have' +'spent is 50 percent of your spending over the past year. ' + 'Boy you need to save more and stop being so yolo swag. Dabs'
     return statement(speech_text).simple_card('BiWeeklyPercentage', speech_text)
 
 @ask.intent('YearTotal3')

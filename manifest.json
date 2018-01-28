@@ -1,17 +1,17 @@
 {
   "name": "Hoya Hacks Progressive Web App",
-  "short_name": "HoyaHacks",
+  "short_name": "EchoDog",
   "icons": [{
       "src": "images/icons/jc-152x152.png",
       "sizes": "152x152",
       "type": "image/png"
     }, {
-      "src": "images/icons/jc-192x196.png",
+      "src": "images/android-chrome-192x196.png",
       "sizes": "192x192",
       "type": "image/png"
     }, 
     {
-      "src": "images/icons/jc-512x512.png",
+      "src": "images/icons/android-chrome-512x512.png",
       "sizes": "512x512",
       "type": "image/png"
     }],

@@ -117,11 +117,15 @@ def most_recent():
     speech_text = most_recent_transaction()
     return statement(speech_text).simple_card('MostRecent', speech_text)
 
+@ask.intent('Unhandled')
+def unhandled():
+    unhandled_response="Sorry, I did not understand that command. Say help for assitance"
+    return question().reprompt(unhandled_response).simple_card('Unhandled', unhandled_response)
 
 @ask.intent('AMAZON.HelpIntent')
 def help():
-    speech_text = week_spend()
-    return question(speech_text).reprompt(speech_text).simple_card('HelloWorld', speech_text)
+    unhandled_response="Sorry, I did not understand that command. Say help for assitance."
+    return question().reprompt(unhandled_response).simple_card('Unhandled', unhandled_response)
 
 
 @ask.session_ended
